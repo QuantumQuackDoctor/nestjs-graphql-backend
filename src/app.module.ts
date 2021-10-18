@@ -3,8 +3,6 @@ import { ConfigModule } from '@nestjs/config';
 import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { ReimbursementModule } from './reimbursement/reimbursement.module';
 
 @Module({
@@ -30,7 +28,7 @@ import { ReimbursementModule } from './reimbursement/reimbursement.module';
     }),
     ReimbursementModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
