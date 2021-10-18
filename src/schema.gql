@@ -1,0 +1,32 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Reimbursement {
+  id: MongoObjectId
+  amountRequested: Float!
+  tax: Float!
+  approved: Boolean!
+  createdAt: DateTime!
+}
+
+scalar MongoObjectId
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Query {
+  reimbursements: [Reimbursement!]!
+  reimbursement(id: MongoObjectId!): Reimbursement
+}
+
+type Mutation {
+  createReimbursement(data: ReimbursementInput!): Reimbursement!
+}
+
+input ReimbursementInput {
+  amountRequested: Float!
+  tax: Float!
+}
